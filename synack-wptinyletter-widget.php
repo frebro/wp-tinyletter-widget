@@ -128,6 +128,7 @@ class TinyLetter_Widget extends WP_Widget {
     <p>
       <label for="<?php echo $this->get_field_id('url'); ?>"><?php _e('URL'); ?></label>
       <input class="widefat" id="<?php echo $this->get_field_id('url'); ?>" name="<?php echo $this->get_field_name('url'); ?>" type="text" value="<?php echo esc_attr($url); ?>" placeholder="http://tinyletter.com/&hellip;">
+      <small><?php _e('You will find the URL to your newsletter <a href="https://tinyletter.com/publicize/" title="Visit this link to find your newsletter URL">here</a> after you have registered and logged in to TinyLetter.', 'synack'); ?></small>
     </p>
 
     <p>

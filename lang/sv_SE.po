@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SYN-ACK Wordpress TinyLetter Widget\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-22 12:03+0100\n"
-"PO-Revision-Date: 2011-11-22 12:03+0100\n"
+"POT-Creation-Date: 2011-11-22 12:07+0100\n"
+"PO-Revision-Date: 2011-11-22 12:08+0100\n"
 "Last-Translator: Fredrik Broman <fredrik@syn-ack.se>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -53,7 +53,11 @@ msgstr "Valfri text före formuläret"
 msgid "URL"
 msgstr "URL"
 
-#: ../synack-wptinyletter-widget.php:134
+#: ../synack-wptinyletter-widget.php:131
+msgid "You will find the URL to your newsletter <a href=\"https://tinyletter.com/publicize/\" title=\"Visit this link to find your newsletter URL\">here</a> after you have registered and logged in to TinyLetter."
+msgstr "Du hittar adressen till ditt nyhetsbrev <a href=\"https://tinyletter.com/publicize/\" title=\"Öppna den här länken för att se adressen till ditt nyhetsbrev\">här</a> när du har registrerat och loggat in på TinyLetter."
+
+#: ../synack-wptinyletter-widget.php:135
 msgid "Show TinyLetter attribution"
 msgstr "Visa länk till TinyLetter"
 
