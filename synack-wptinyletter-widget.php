@@ -1,42 +1,38 @@
 <?php
 /**
-  * @Author Fredrik Broman
-  * @link http://twitter.com/frebro
-  * @Package Wordpress
-  * @SubPackage Widgets
-  *
-  * Plugin Name: TinyLetter Widget
-  * Description: Displays a TinyLetter subscription form
-  * Version: 1.0.0
-  * Author: SYN-ACK
-  * Author URI: http://syn-ack.se
-  *
-  */
+ * @Package Wordpress
+ * @SubPackage Widgets
+ *
+ * Plugin Name: TinyLetter Widget
+ * Description: Displays a TinyLetter subscription form
+ * Version: 1.0.0
+ * Author: SYN-ACK
+ * Author URI: http://syn-ack.se
+ *
+ */
 
 defined('ABSPATH') or die("Cannot access pages directly.");
 
 /**
-  * Initializing
-  *
-  * The directory separator is different between linux and microsoft servers.
-  * Thankfully php sets the DIRECTORY_SEPARATOR constant so that we know what
-  * to use.
-  */
+ * Initializing
+ *
+ * The directory separator is different between linux and microsoft servers.
+ * Thankfully php sets the DIRECTORY_SEPARATOR constant so that we know what
+ * to use.
+ */
 defined("DS") or define("DS", DIRECTORY_SEPARATOR);
 
 /**
-  * Actions and Filters
-  *
-  * Register any and all actions here. Nothing should actually be called
-  * directly, the entire system will be based on these actions and hooks.
-  */
+ * Actions and Filters
+ *
+ * Register any and all actions here. Nothing should actually be called
+ * directly, the entire system will be based on these actions and hooks.
+ */
 add_action( 'widgets_init', create_function( '', 'register_widget("TinyLetter_Widget");' ) );
 
 
 /**
  * TinyLetter widget class
- *
- * @since 2.8.0
  */
 class TinyLetter_Widget extends WP_Widget {
 
