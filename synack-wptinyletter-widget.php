@@ -116,7 +116,7 @@ class TinyLetter_Widget extends WP_Widget {
     $text = esc_textarea($instance['text']);
 ?>
     <p>
-      <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title'); ?></label>
+      <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', 'synack'); ?></label>
       <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" placeholder="<?php _e('Newsletter', 'synack'); ?>">
     </p>
 
@@ -125,18 +125,18 @@ class TinyLetter_Widget extends WP_Widget {
     </p>
 
     <p>
-      <label for="<?php echo $this->get_field_id('url'); ?>"><?php _e('URL'); ?></label>
+      <label for="<?php echo $this->get_field_id('url'); ?>"><?php _e('URL', 'synack'); ?></label>
       <input class="widefat" id="<?php echo $this->get_field_id('url'); ?>" name="<?php echo $this->get_field_name('url'); ?>" type="text" value="<?php echo esc_attr($url); ?>" placeholder="http://tinyletter.com/&hellip;">
       <small><?php _e('You will find the URL to your newsletter <a href="https://tinyletter.com/publicize/" title="Visit this link to find your newsletter URL">here</a> after you have registered and logged in to TinyLetter.', 'synack'); ?></small>
     </p>
 
     <p>
-      <label for="<?php echo $this->get_field_id('email_placeholder'); ?>"><?php _e('Email placeholder'); ?></label>
+      <label for="<?php echo $this->get_field_id('email_placeholder'); ?>"><?php _e('Email placeholder', 'synack'); ?></label>
       <input class="widefat" id="<?php echo $this->get_field_id('email_placeholder'); ?>" name="<?php echo $this->get_field_name('email_placeholder'); ?>" type="email" value="<?php echo esc_attr($email_placeholder); ?>" placeholder="<?php _e('foo@bar.com', 'synack'); ?>">
     </p>
 
     <p>
-      <input id="<?php echo $this->get_field_id('attribution'); ?>" name="<?php echo $this->get_field_name('attribution'); ?>" type="checkbox" <?php checked(isset($instance['attribution']) ? $instance['attribution'] : 1); ?>>&nbsp;<label for="<?php echo $this->get_field_id('attribution'); ?>"><?php _e('Show TinyLetter attribution'); ?></label>
+      <input id="<?php echo $this->get_field_id('attribution'); ?>" name="<?php echo $this->get_field_name('attribution'); ?>" type="checkbox" <?php checked(isset($instance['attribution']) ? $instance['attribution'] : 1); ?>>&nbsp;<label for="<?php echo $this->get_field_id('attribution'); ?>"><?php _e('Show TinyLetter attribution', 'synack'); ?></label>
     </p>
 <?php
   }
