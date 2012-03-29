@@ -78,8 +78,8 @@ class TinyLetter_Widget extends WP_Widget {
         <form action="<?php echo $url; ?>" method="post" target="popupwindow" onsubmit="window.open('<?php echo $url; ?>', popupwindow, scrollbars=yes,width=800,height=600);return true">
           <input type="hidden" value="1" name="embed">
           <p>
-            <label for="emailaddress"><?php _e('Your email address', 'synack'); ?></label>
-            <input type="email" name="emailaddress" placeholder="<?php _e('foo@bar.com', 'synack'); ?>">
+            <label for="tlemail"><?php _e('Your email address', 'synack'); ?></label>
+            <input type="email" name="email" id="tlemail" placeholder="<?php _e('foo@bar.com', 'synack'); ?>">
           </p>
           <p>
             <input type="submit" value="<?php _e('Subscribe', 'synack'); ?>">
