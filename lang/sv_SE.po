@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SYN-ACK Wordpress TinyLetter Widget\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-22 12:07+0100\n"
-"PO-Revision-Date: 2011-11-22 12:08+0100\n"
+"POT-Creation-Date: 2012-03-29 12:05+0100\n"
+"PO-Revision-Date: 2012-03-29 12:06+0100\n"
 "Last-Translator: Fredrik Broman <fredrik@syn-ack.se>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -13,51 +13,55 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../synack-wptinyletter-widget.php:52
+#: ../synack-wptinyletter-widget.php:48
 msgid "Displays a TinyLetter subscription form"
 msgstr "Visar ett prenumerationsformulär för TinyLetter"
 
-#: ../synack-wptinyletter-widget.php:56
+#: ../synack-wptinyletter-widget.php:52
 msgid "TinyLetter"
 msgstr "TinyLetter"
 
-#: ../synack-wptinyletter-widget.php:85
+#: ../synack-wptinyletter-widget.php:82
 msgid "Your email address"
 msgstr "Din e-postadress"
 
 #: ../synack-wptinyletter-widget.php:86
-msgid "foo@bar.com"
-msgstr "foo@bar.com"
-
-#: ../synack-wptinyletter-widget.php:89
 msgid "Subscribe"
 msgstr "Prenumerera"
 
-#: ../synack-wptinyletter-widget.php:93
+#: ../synack-wptinyletter-widget.php:90
 msgid "A TinyLetter email newsletter"
 msgstr "Ett TinyLetter-nyhetsbrev"
 
-#: ../synack-wptinyletter-widget.php:120
+#: ../synack-wptinyletter-widget.php:119
 msgid "Title"
 msgstr "Rubrik"
 
-#: ../synack-wptinyletter-widget.php:121
+#: ../synack-wptinyletter-widget.php:120
 msgid "Newsletter"
 msgstr "Nyhetsbrev"
 
-#: ../synack-wptinyletter-widget.php:125
+#: ../synack-wptinyletter-widget.php:124
 msgid "Optional text before the form"
 msgstr "Valfri text före formuläret"
 
-#: ../synack-wptinyletter-widget.php:129
+#: ../synack-wptinyletter-widget.php:128
 msgid "URL"
 msgstr "URL"
 
-#: ../synack-wptinyletter-widget.php:131
+#: ../synack-wptinyletter-widget.php:130
 msgid "You will find the URL to your newsletter <a href=\"https://tinyletter.com/publicize/\" title=\"Visit this link to find your newsletter URL\">here</a> after you have registered and logged in to TinyLetter."
 msgstr "Du hittar adressen till ditt nyhetsbrev <a href=\"https://tinyletter.com/publicize/\" title=\"Öppna den här länken för att se adressen till ditt nyhetsbrev\">här</a> när du har registrerat och loggat in på TinyLetter."
 
+#: ../synack-wptinyletter-widget.php:134
+msgid "Email placeholder"
+msgstr "Platshållare för epost"
+
 #: ../synack-wptinyletter-widget.php:135
+msgid "foo@bar.com"
+msgstr "foo@bar.com"
+
+#: ../synack-wptinyletter-widget.php:139
 msgid "Show TinyLetter attribution"
 msgstr "Visa länk till TinyLetter"
 

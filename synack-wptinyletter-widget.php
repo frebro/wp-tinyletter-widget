@@ -54,9 +54,10 @@ class TinyLetter_Widget extends WP_Widget {
 
   function widget( $args, $instance ) {
     extract($args);
-    $title = apply_filters( 'widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);
-    $url = apply_filters( 'widget_url', empty($instance['url']) ? '' : $instance['url'], $instance, $this->id_base);
-    $text = apply_filters( 'widget_text', $instance['text'], $instance );
+    $title = apply_filters( 'title', empty($instance['title']) ? '' : $instance['title'], $instance);
+    $url = apply_filters( 'url', empty($instance['url']) ? '' : $instance['url'], $instance);
+    $email_placeholder = apply_filters( 'email_placeholder', empty($instance['email_placeholder']) ? '' : $instance['email_placeholder'], $instance);
+    $text = apply_filters( 'text', $instance['text'], $instance);
 
     if ( !empty( $url ) ) {
 
@@ -79,7 +80,7 @@ class TinyLetter_Widget extends WP_Widget {
           <input type="hidden" value="1" name="embed">
           <p>
             <label for="tlemail"><?php _e('Your email address', 'synack'); ?></label>
-            <input type="email" name="email" id="tlemail" placeholder="<?php _e('foo@bar.com', 'synack'); ?>">
+            <input type="email" name="email" id="tlemail" placeholder="<?php echo $email_placeholder; ?>">
           </p>
           <p>
             <input type="submit" value="<?php _e('Subscribe', 'synack'); ?>">
@@ -101,15 +102,17 @@ class TinyLetter_Widget extends WP_Widget {
     $instance = $old_instance;
     $instance['title'] = strip_tags($new_instance['title']);
     $instance['url'] = strip_tags($new_instance['url']);
+    $instance['email_placeholder'] = strip_tags($new_instance['email_placeholder']);
     $instance['text'] = stripslashes( wp_filter_post_kses( addslashes($new_instance['text']) ) ); // wp_filter_post_kses() expects slashed
     $instance['attribution'] = isset($new_instance['attribution']);
     return $instance;
   }
 
   function form( $instance ) {
-    $instance = wp_parse_args( (array) $instance, array( 'title' => '', 'url' => '', 'text' => '' ) );
+    $instance = wp_parse_args( (array) $instance, array( 'title' => '', 'url' => '', 'email_placeholder' => '', 'text' => '' ) );
     $title = strip_tags($instance['title']);
     $url = strip_tags($instance['url']);
+    $email_placeholder = strip_tags($instance['email_placeholder']);
     $text = esc_textarea($instance['text']);
 ?>
     <p>
@@ -125,6 +128,11 @@ class TinyLetter_Widget extends WP_Widget {
       <label for="<?php echo $this->get_field_id('url'); ?>"><?php _e('URL'); ?></label>
       <input class="widefat" id="<?php echo $this->get_field_id('url'); ?>" name="<?php echo $this->get_field_name('url'); ?>" type="text" value="<?php echo esc_attr($url); ?>" placeholder="http://tinyletter.com/&hellip;">
       <small><?php _e('You will find the URL to your newsletter <a href="https://tinyletter.com/publicize/" title="Visit this link to find your newsletter URL">here</a> after you have registered and logged in to TinyLetter.', 'synack'); ?></small>
+    </p>
+
+    <p>
+      <label for="<?php echo $this->get_field_id('email_placeholder'); ?>"><?php _e('Email placeholder'); ?></label>
+      <input class="widefat" id="<?php echo $this->get_field_id('email_placeholder'); ?>" name="<?php echo $this->get_field_name('email_placeholder'); ?>" type="email" value="<?php echo esc_attr($email_placeholder); ?>" placeholder="<?php _e('foo@bar.com', 'synack'); ?>">
     </p>
 
     <p>
