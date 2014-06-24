@@ -4,10 +4,10 @@
  * @SubPackage Widgets
  *
  * Plugin Name: TinyLetter Widget
- * Description: Displays a TinyLetter subscription form
- * Version: 1.0.0
- * Author: SYN-ACK
- * Author URI: http://syn-ack.se
+ * Description: Displays a TinyLetter subscription form in a sidebar
+ * Version: 1.1.0
+ * Author: Fredrik Broman
+ * Author URI: http://frebro.com
  *
  */
 
@@ -42,10 +42,10 @@ class TinyLetter_Widget extends WP_Widget {
     if( !empty( $locale ) ) {
       $mofile = dirname(__FILE__) . "/lang/" .  $locale . ".mo";
       if(@file_exists($mofile) && is_readable($mofile))
-        load_textdomain('synack', $mofile);
+        load_textdomain('tinyletter-widget', $mofile);
     }
 
-    $widget_ops = array('classname' => 'widget_tinyletter', 'description' => __('Displays a TinyLetter subscription form', 'synack'));
+    $widget_ops = array('classname' => 'widget_tinyletter', 'description' => __('Displays a TinyLetter subscription form', 'tinyletter-widget'));
 
     $control_ops = array('width' => 250, 'height' => 150);
 
@@ -79,15 +79,15 @@ class TinyLetter_Widget extends WP_Widget {
         <form action="<?php echo $url; ?>" method="post" target="popupwindow" onsubmit="window.open('<?php echo $url; ?>', popupwindow, scrollbars=yes,width=800,height=600);return true">
           <input type="hidden" value="1" name="embed">
           <p>
-            <label for="tlemail"><?php _e('Your email address', 'synack'); ?></label>
+            <label for="tlemail"><?php _e('Your email address', 'tinyletter-widget'); ?></label>
             <input type="email" name="email" id="tlemail" placeholder="<?php echo $email_placeholder; ?>">
           </p>
           <p>
-            <input type="submit" value="<?php _e('Subscribe', 'synack'); ?>">
+            <input type="submit" value="<?php _e('Subscribe', 'tinyletter-widget'); ?>">
           </p>
           <?php
             if ( $instance['attribution'] ) {
-              echo '<small><a href="http://tinyletter.com" title="'.__('A TinyLetter email newsletter', 'synack').'">'.__('A TinyLetter email newsletter', 'synack').'</a></small>';
+              echo '<small><a href="http://tinyletter.com" title="'.__('A TinyLetter email newsletter', 'tinyletter-widget').'">'.__('A TinyLetter email newsletter', 'tinyletter-widget').'</a></small>';
             }
           ?>
       </form>
@@ -116,27 +116,27 @@ class TinyLetter_Widget extends WP_Widget {
     $text = esc_textarea($instance['text']);
 ?>
     <p>
-      <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', 'synack'); ?></label>
-      <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" placeholder="<?php _e('Newsletter', 'synack'); ?>">
+      <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', 'tinyletter-widget'); ?></label>
+      <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" placeholder="<?php _e('Newsletter', 'tinyletter-widget'); ?>">
     </p>
 
     <p>
-      <textarea class="widefat" rows="4" cols="20" id="<?php echo $this->get_field_id('text'); ?>" name="<?php echo $this->get_field_name('text'); ?>" placeholder="<?php _e('Optional text before the form', 'synack'); ?>"><?php echo $text; ?></textarea>
+      <textarea class="widefat" rows="4" cols="20" id="<?php echo $this->get_field_id('text'); ?>" name="<?php echo $this->get_field_name('text'); ?>" placeholder="<?php _e('Optional text before the form', 'tinyletter-widget'); ?>"><?php echo $text; ?></textarea>
     </p>
 
     <p>
-      <label for="<?php echo $this->get_field_id('url'); ?>"><?php _e('URL', 'synack'); ?></label>
+      <label for="<?php echo $this->get_field_id('url'); ?>"><?php _e('URL', 'tinyletter-widget'); ?></label>
       <input class="widefat" id="<?php echo $this->get_field_id('url'); ?>" name="<?php echo $this->get_field_name('url'); ?>" type="text" value="<?php echo esc_attr($url); ?>" placeholder="http://tinyletter.com/&hellip;">
-      <small><?php _e('You will find the URL to your newsletter <a href="https://tinyletter.com/publicize/" title="Visit this link to find your newsletter URL">here</a> after you have registered and logged in to TinyLetter.', 'synack'); ?></small>
+      <small><?php _e('You will find the URL to your newsletter <a href="https://tinyletter.com/publicize/" title="Visit this link to find your newsletter URL">here</a> after you have registered and logged in to TinyLetter.', 'tinyletter-widget'); ?></small>
     </p>
 
     <p>
-      <label for="<?php echo $this->get_field_id('email_placeholder'); ?>"><?php _e('Email placeholder', 'synack'); ?></label>
-      <input class="widefat" id="<?php echo $this->get_field_id('email_placeholder'); ?>" name="<?php echo $this->get_field_name('email_placeholder'); ?>" type="email" value="<?php echo esc_attr($email_placeholder); ?>" placeholder="<?php _e('foo@bar.com', 'synack'); ?>">
+      <label for="<?php echo $this->get_field_id('email_placeholder'); ?>"><?php _e('Email placeholder', 'tinyletter-widget'); ?></label>
+      <input class="widefat" id="<?php echo $this->get_field_id('email_placeholder'); ?>" name="<?php echo $this->get_field_name('email_placeholder'); ?>" type="email" value="<?php echo esc_attr($email_placeholder); ?>" placeholder="<?php _e('foo@bar.com', 'tinyletter-widget'); ?>">
     </p>
 
     <p>
-      <input id="<?php echo $this->get_field_id('attribution'); ?>" name="<?php echo $this->get_field_name('attribution'); ?>" type="checkbox" <?php checked(isset($instance['attribution']) ? $instance['attribution'] : 1); ?>>&nbsp;<label for="<?php echo $this->get_field_id('attribution'); ?>"><?php _e('Show TinyLetter attribution', 'synack'); ?></label>
+      <input id="<?php echo $this->get_field_id('attribution'); ?>" name="<?php echo $this->get_field_name('attribution'); ?>" type="checkbox" <?php checked(isset($instance['attribution']) ? $instance['attribution'] : 1); ?>>&nbsp;<label for="<?php echo $this->get_field_id('attribution'); ?>"><?php _e('Show TinyLetter attribution', 'tinyletter-widget'); ?></label>
     </p>
 <?php
   }
