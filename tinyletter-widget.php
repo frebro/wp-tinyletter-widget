@@ -76,20 +76,14 @@ class TinyLetter_Widget extends WP_Widget {
       }
     ?>
 
-        <form action="<?php echo $url; ?>" method="post" target="popupwindow" onsubmit="window.open('<?php echo $url; ?>', popupwindow, scrollbars=yes,width=800,height=600);return true">
+        <form role="form" action="<?php echo $url; ?>" method="post" target="popupwindow" onsubmit="window.open('<?php echo $url; ?>', popupwindow, scrollbars=yes,width=800,height=600);return true">
           <input type="hidden" value="1" name="embed">
-          <p>
+          <div class="form-group">
             <label for="tlemail"><?php _e('Your email address', 'tinyletter-widget'); ?></label>
-            <input type="email" name="email" id="tlemail" placeholder="<?php echo $email_placeholder; ?>">
-          </p>
-          <p>
-            <input type="submit" value="<?php _e('Subscribe', 'tinyletter-widget'); ?>">
-          </p>
-          <?php
-            if ( $instance['attribution'] ) {
-              echo '<small><a href="http://tinyletter.com" title="'.__('A TinyLetter email newsletter', 'tinyletter-widget').'">'.__('A TinyLetter email newsletter', 'tinyletter-widget').'</a></small>';
-            }
-          ?>
+            <input type="email" name="email" class="form-control" id="tlemail" placeholder="<?php echo $email_placeholder; ?>">
+          </div>
+          <input type="submit" class="btn btn-primary" value="<?php _e('Subscribe', 'tinyletter-widget'); ?>">
+          <?php if ( $instance['attribution'] ) echo '<p><small><a href="http://tinyletter.com" title="'.__('A TinyLetter email newsletter', 'tinyletter-widget').'">'.__('A TinyLetter email newsletter', 'tinyletter-widget').'</a></small></p>'; ?>
       </form>
     </div>
 
