@@ -1,4 +1,4 @@
-# SYN-ACK Wordpress TinyLetter Widget
+# Wordpress TinyLetter Widget
 
 This plugins requires you to register for an account at [TinyLetter](http://tinyletter.com).
 
